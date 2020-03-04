@@ -1,0 +1,25 @@
+[package]
+name = "caves"
+version = "0.1.0"
+authors = ["Alex Pyrgiotis <apyrgio@gmail.com>"]
+edition = "2018"
+license = "MPL-2.0"
+description = """
+A collection of embedded, thread-safe key-value stores in Rust.
+"""
+homepage = "https://github.com/apyrgio/caves"
+repository = "https://github.com/apyrgio/caves"
+documentation = "https://docs.rs/caves"
+readme = "README.md"
+keywords = ["embedded", "persistence", "database", "key-value-store"]
+categories = ["database-implementations"]
+
+[dependencies]
+anyhow = "1.0"
+thiserror = "1.0"
+atomicwrites = "0.2"
+rocksdb = "0.13"
+
+[dev-dependencies]
+assert_fs = "0.11.*"
+predicates = "1.0.*"
