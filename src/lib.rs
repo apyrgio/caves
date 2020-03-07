@@ -395,8 +395,11 @@ mod tests {
         assert_eq!(res.is_err(), true);
         let err = res.unwrap_err();
         assert_eq!(err, internal_err);
-        let msg = format!("{:?}", err);
-        assert_eq!(msg.contains("No such file or directory"), true);
+        // XXX: In order to see if the error is ENOENT, we have to somehow get
+        // it from `anyhow`. We can't check the string representation of the
+        // error, because it's different betweeen Windows and Linux/MacOs hosts.
+        //let msg = format!("{:?}", err);
+        //assert_eq!(msg.contains("No such file or directory"), true);
 
         // Test for files instead of directories.
         let empty_file = temp_dir.path().join("empty_file");
@@ -406,8 +409,10 @@ mod tests {
         assert_eq!(res.is_err(), true);
         let err = res.unwrap_err();
         assert_eq!(err, internal_err);
-        let msg = format!("{:?}", err);
-        assert_eq!(msg.contains("is not a directory"), true);
+        // XXX: We can't check the string representation of the error. See
+        // previous similar comment.
+        //let msg = format!("{:?}", err);
+        //assert_eq!(msg.contains("is not a directory"), true);
 
         // Test for removed directory under our feet.
         let internal_err = Err(internal_err);
