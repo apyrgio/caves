@@ -2,6 +2,7 @@
 
 A collection of embedded, thread-safe key-value stores (kvs) in Rust.
 
+[![CI](https://github.com/apyrgio/caves/workflows/CI/badge.svg?branch=master&event=schedule)](https://github.com/apyrgio/caves/actions?query=event%3Aschedule+branch%3Amaster)
 [![Crates.io](https://img.shields.io/crates/v/caves.svg)](https://crates.io/crates/caves)
 [![Docs.rs](https://docs.rs/caves/badge.svg)](https://docs.rs/caves)
 
