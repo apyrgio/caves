@@ -51,15 +51,10 @@ assert_eq!(res, Err(Error::NotFound("key".to_string())));
 
 You can read the latest docs in https://docs.rs/caves.
 
-## Development
+## Contributing
 
-Clone this repo, make changes to the code and ensure that the tests pass:
-
-```
-$ cargo test
-```
-
-Finally, read the [`NOTICE.md`] file for the legal status of the project.
+You can read the [`CONTRIBUTING.md`] guide for more info on how to contribute to
+this project.
 
 ## Legal
 
@@ -67,5 +62,6 @@ Licensed under MPL-2.0. Please read the [`NOTICE.md`] and [`LICENSE`] files for
 the full copyright and license information.
 
 [Embedded]: https://en.wikipedia.org/wiki/Embedded_database
-[`NOTICE.md`]: /NOTICE.md
-[`LICENSE`]: /LICENSE
+[`CONTRIBUTING.md`]: CONTRIBUTING.md
+[`NOTICE.md`]: NOTICE.md
+[`LICENSE`]: LICENSE
