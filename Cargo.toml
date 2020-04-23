@@ -18,7 +18,7 @@ categories = ["database-implementations"]
 anyhow = "1.0"
 thiserror = "1.0"
 atomicwrites = "0.2"
-rocksdb = "0.13"
+rocksdb = "0.14"
 
 [dev-dependencies]
 assert_fs = "0.11.*"
