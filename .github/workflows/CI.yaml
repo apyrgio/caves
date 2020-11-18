@@ -4,6 +4,9 @@ on:
   push:
   schedule:
     - cron: '0 0 * * *' # Run every day at 00:00 UTC.
+defaults:
+  run:
+    shell: bash
 
 env:
   RUST_BACKTRACE: full  # Shows more info when a test fails.
@@ -79,7 +82,7 @@ jobs:
       - name: Query Clang Version
         if: matrix.os == 'windows-latest'
         run: |
-          Get-Command clang.exe
+          where clang.exe
           clang.exe --version
 
       - name: Test
