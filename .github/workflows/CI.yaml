@@ -23,6 +23,8 @@ jobs:
         include:
           - cmd: fmt
             args: --all -- --check
+          - cmd: doc
+            args: --all-features
 
     steps:
       - name: Checkout
@@ -89,4 +91,6 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: test
-          args: "-- --nocapture" # Allow printing the output of tests
+          # Run the tests for all features and always print their output, for
+          # debugging reasons.
+          args: "--all-features -- --nocapture"

@@ -7,6 +7,11 @@ Versioning].
 
 ## [Unreleased]
 
+### Changed
+
+- Move the RocksDB support behind the `with-rocksdb` feature flag. This is done
+  mainly to reduce the (re)build times.
+
 ## [0.1.0] - 2020-03-04
 
 Initial release.

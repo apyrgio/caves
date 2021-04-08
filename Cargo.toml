@@ -18,8 +18,14 @@ categories = ["database-implementations"]
 anyhow = "1.0"
 thiserror = "1.0"
 atomicwrites = "0.2"
-rocksdb = "0.14"
+rocksdb = { version = "0.14", optional = true }
 
 [dev-dependencies]
 assert_fs = "0.11.*"
 predicates = "1.0.*"
+
+[features]
+with-rocksdb = ["rocksdb"]
+
+[package.metadata.docs.rs]
+all-features = true

@@ -47,6 +47,10 @@ let res = b.get("key");
 assert_eq!(res, Err(Error::NotFound("key".to_string())));
 ```
 
+The above example uses an in-memory backend, but there is also support for
+filesystem and RocksDB backends. The latter can be enabled by passing the
+`with-rocksdb` feature flag for the `caves` dependency in your `Cargo.toml`.
+
 ## Documentation
 
 You can read the latest docs in https://docs.rs/caves.

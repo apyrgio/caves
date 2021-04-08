@@ -286,11 +286,13 @@ impl Cave for FileCave {
 /// A key-value store that stores keys in [RocksDB].
 ///
 /// [RocksDB]: https://github.com/facebook/rocksdb
+#[cfg(feature = "with-rocksdb")]
 #[derive(Debug)]
 pub struct RocksDBCave {
     db: rocksdb::DB,
 }
 
+#[cfg(feature = "with-rocksdb")]
 impl RocksDBCave {
     /// Create a new instance.
     ///
@@ -303,6 +305,7 @@ impl RocksDBCave {
     }
 }
 
+#[cfg(feature = "with-rocksdb")]
 impl Cave for RocksDBCave {
     fn get(&self, name: &str) -> Res {
         match self.db.get(name.as_bytes()) {
@@ -433,6 +436,7 @@ mod tests {
         assert_eq!(res, not_found_err);
     }
 
+    #[cfg(feature = "with-rocksdb")]
     #[test]
     fn test_rocksdb_backend_simple() {
         let temp_dir = assert_fs::TempDir::new().unwrap();
@@ -440,6 +444,7 @@ mod tests {
         _test_simple(Box::new(rb));
     }
 
+    #[cfg(feature = "with-rocksdb")]
     #[test]
     fn test_rocksdb_backend_errors() {
         let temp_dir = assert_fs::TempDir::new().unwrap();
