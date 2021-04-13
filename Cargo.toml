@@ -15,14 +15,14 @@ keywords = ["embedded", "persistence", "database", "key-value-store"]
 categories = ["database-implementations"]
 
 [dependencies]
-anyhow = "1.0"
-thiserror = "1.0"
-atomicwrites = "0.2"
-rocksdb = { version = "0.14", optional = true }
+anyhow = "1"
+thiserror = "1"
+atomicwrites = "0.3"
+rocksdb = { version = "0.15", optional = true }
 
 [dev-dependencies]
-assert_fs = "0.11.*"
-predicates = "1.0.*"
+assert_fs = "1"
+predicates = "1"
 
 [features]
 with-rocksdb = ["rocksdb"]
